@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menus - VG RESTAURANT</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logoVg.jpg" alt="VG Logo">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Menus.html">Menus</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="OurChief.html">Our Chefs</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li id="cart"><a href="#">Cart</a><span id="cart-count">0</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu">
+        <h2>Our Delicious Menu</h2>
+        <div class="filter-controls">
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+                <option value="beverages">Beverages</option>
+                <option value="snacks">Snacks</option>
+                <option value="sweet">Sweets</option>
+            </select>
+            <select id="priceFilter">
+                <option value="none">Price</option>
+                <option value="lowToHigh">Low to High</option>
+                <option value="highToLow">High to Low</option>
+            </select>
+            <button id="applyFilters">Apply Filters</button>
+        </div>
+        <div class="menu-item" data-category="veg" data-price="250">
+            <img src="panner.jpg" alt="Paneer Butter Masala" class="menu-image">
+            <h3>Paneer Butter Masala</h3>
+            <p>Delicious paneer in a creamy butter gravy.</p>
+            <p>Price: ₹250</p>
+            <button class="add-to-cart" data-id="1">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="veg" data-price="280">
+            <img src="pizza.jpg" alt="Veg Pizza" class="menu-image">
+            <h3>Veg Pizza</h3>
+            <p>Cheesy veg-loaded pizza with crispy crust.</p>
+            <p>Price: ₹280</p>
+            <button class="add-to-cart" data-id="2">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="veg" data-price="60">
+            <img src="naan.jpg" alt="Butter Naan" class="menu-image">
+            <h3>Butter Naan</h3>
+            <p>Soft buttery naan, perfect with curries.</p>
+            <p>Price: ₹60</p>
+            <button class="add-to-cart" data-id="3">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="veg" data-price="270">
+            <img src="pasta.jpg" alt="Pasta Alfredo" class="menu-image">
+            <h3>Pasta Alfredo</h3>
+            <p>Creamy alfredo pasta with rich sauce.</p>
+            <p>Price: ₹270</p>
+            <button class="add-to-cart" data-id="4">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="veg" data-price="180">
+            <img src="dal.jpg" alt="Dal Tadka" class="menu-image">
+            <h3>Dal Tadka</h3>
+            <p>Tasty dal cooked with Indian spices.</p>
+            <p>Price: ₹180</p>
+            <button class="add-to-cart" data-id="5">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="non-veg" data-price="350">
+            <img src="chikenb.jpg" alt="Chicken Biryani" class="menu-image">
+            <h3>Chicken Biryani</h3>
+            <p>Aromatic chicken biryani with saffron rice.</p>
+            <p>Price: ₹350</p>
+            <button class="add-to-cart" data-id="6">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="non-veg" data-price="400">
+            <img src="tandooric.jpg" alt="Tandoori Chicken" class="menu-image">
+            <h3>Tandoori Chicken</h3>
+            <p>Spicy tandoori chicken with smoky flavor.</p>
+            <p>Price: ₹400</p>
+            <button class="add-to-cart" data-id="7">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="non-veg" data-price="500">
+            <img src="muttoncurry.jpg" alt="Mutton Curry" class="menu-image">
+            <h3>Mutton Curry</h3>
+            <p>Slow-cooked mutton in a rich gravy.</p>
+            <p>Price: ₹500</p>
+            <button class="add-to-cart" data-id="8">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="non-veg" data-price="320">
+            <img src="fish.jpg" alt="Fish Fry" class="menu-image">
+            <h3>Fish Fry</h3>
+            <p>Crispy fried fish with spices.</p>
+            <p>Price: ₹320</p>
+            <button class="add-to-cart" data-id="9">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="beverages" data-price="120">
+            <img src="mango.jpg" alt="Mango Shake" class="menu-image">
+            <h3>Mango Shake</h3>
+            <p>Refreshing mango shake with ice cream.</p>
+            <p>Price: ₹120</p>
+            <button class="add-to-cart" data-id="10">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="beverages" data-price="150">
+            <img src="Coldcoffee.jpg" alt="Cold Coffee" class="menu-image">
+            <h3>Cold Coffee</h3>
+            <p>Iced coffee with whipped cream.</p>
+            <p>Price: ₹150</p>
+            <button class="add-to-cart" data-id="11">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="beverages" data-price="100">
+            <img src="lassi.jpg" alt="Lassi" class="menu-image">
+            <h3>Lassi</h3>
+            <p>Sweet and creamy Punjabi lassi.</p>
+            <p>Price: ₹100</p>
+            <button class="add-to-cart" data-id="12">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="beverages" data-price="140">
+            <img src="blue.jpg" alt="Blue Lagoon" class="menu-image">
+            <h3>Blue Lagoon</h3>
+            <p>Refreshing blue curacao mocktail.</p>
+            <p>Price: ₹140</p>
+            <button class="add-to-cart" data-id="13">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="snacks" data-price="90">
+            <img src="fries.jpg" alt="French Fries" class="menu-image">
+            <h3>French Fries</h3>
+            <p>Crispy golden fries with ketchup.</p>
+            <p>Price: ₹90</p>
+            <button class="add-to-cart" data-id="14">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="snacks" data-price="50">
+            <img src="samosa.jpg" alt="Samosa" class="menu-image">
+            <h3>Samosa</h3>
+            <p>Spiced potato-stuffed crispy snack.</p>
+            <p>Price: ₹50</p>
+            <button class="add-to-cart" data-id="15">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="snacks" data-price="130">
+            <img src="springrolls.jpg" alt="Spring Rolls" class="menu-image">
+            <h3>Spring Rolls</h3>
+            <p>Crispy vegetable-stuffed rolls.</p>
+            <p>Price: ₹130</p>
+            <button class="add-to-cart" data-id="16">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="snacks" data-price="60">
+            <img src="panipuri.jpg" alt="Pani Puri" class="menu-image">
+            <h3>Pani Puri</h3>
+            <p>Crispy puris filled with spicy tangy water.</p>
+            <p>Price: ₹60</p>
+            <button class="add-to-cart" data-id="17">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="sweet" data-price="100">
+            <img src="gulab.jpg" alt="Gulab Jamun" class="menu-image">
+            <h3>Gulab Jamun</h3>
+            <p>Soft and juicy Indian sweet balls.</p>
+            <p>Price: ₹100</p>
+            <button class="add-to-cart" data-id="18">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="sweet" data-price="250">
+            <img src="cake.jpg" alt="Chocolate Cake" class="menu-image">
+            <h3>Chocolate Cake</h3>
+            <p>Rich chocolate cake with frosting.</p>
+            <p>Price: ₹250</p>
+            <button class="add-to-cart" data-id="19">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="sweet" data-price="200">
+            <img src="rasmalai.jpg" alt="Rasmalai" class="menu-image">
+            <h3>Rasmalai</h3>
+            <p>Soft cheese patties soaked in milk syrup.</p>
+            <p>Price: ₹200</p>
+            <button class="add-to-cart" data-id="20">Add to Cart</button>
+        </div>
+        
+        <div class="menu-item" data-category="sweet" data-price="180">
+            <img src="halwa.jpg" alt="Moong Dal Halwa" class="menu-image">
+            <h3>Moong Dal Halwa</h3>
+            <p>Rich and aromatic halwa made from moong dal.</p>
+            <p>Price: ₹180</p>
+            <button class="add-to-cart" data-id="21">Add to Cart</button>
+        </div>
+        <script src="menu5.js"></script>
+      
+            
+        </body>
+        </html>
