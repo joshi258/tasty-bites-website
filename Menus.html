@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menus - VG RESTAURANT</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logoVg.jpg" alt="VG Logo">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Menus.html">Menus</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="OurChief.html">Our Chefs</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li id="cart"><a href="#">Cart</a><span id="cart-count">0</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu">
+        <h2>Our Delicious Menu</h2>
+        <div class="filter-controls">
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+                <option value="beverages">Beverages</option>
+                <option value="snacks">Snacks</option>
+                <option value="sweet">Sweets</option>
+            </select>
+            <select id="priceFilter">
+                <option value="none">Price</option>
+                <option value="lowToHigh">Low to High</option>
+                <option value="highToLow">High to Low</option>
+            </select>
+            <button id="applyFilters">Apply Filters</button>
+        </div>
+        <div class="menu-items">
+            </div>
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal"></div>
+        </div>
+    </div>
+    <!--<script src="cart.js"></script>-->
+    <script src="Menus.js"></script>
+    
+
+
+</body>
+</html>

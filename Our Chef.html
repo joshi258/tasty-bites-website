@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Chefs - VG RESTAURANT</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .chefs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .chef-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        .chef-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        .chef-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .chef-card:hover img {
+            transform: scale(1.1);
+        }
+        .chef-card h3 {
+            margin: 15px 0 5px;
+        }
+        .chef-card p {
+            color: #c59d5f;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #333;
+            padding: 15px 50px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #c59d5f;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Menus.html">Menus</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Our Chef.html">Our Chefs</a></li>
+                <li><a href="Contact Us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Our Chefs</h2>
+        <div class="chefs">
+            <div class="chef-card" style="animation-delay: 0.2s;">
+                <img src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMV9jdXRlX2FuZF9xdWlya3lfc2VsZmllX29mX21vZGVybl9pbmRpYW5fY2hlZl9jb19lODE1YTJjNC04NDAwLTRmMDYtOThkNi1iNTNhZjIzYjM2NmZfMS5qcGc.jpg" alt="Michael Gordon">
+                <h3>Michael Gordon</h3>
+                <p>Assistant Chef</p>
+            </div>
+            <div class="chef-card" style="animation-delay: 0.4s;">
+                <img src="https://thumbs.dreamstime.com/b/cooking-class-profession-people-concept-happy-male-indian-chef-toque-over-students-background-happy-male-indian-chef-146836323.jpg" alt="Milton Bryant">
+                <h3>Milton Bryant</h3>
+                <p>Chef</p>
+            </div>
+            <div class="chef-card" style="animation-delay: 0.6s;">
+                <img src="https://womenchefs.org/wp-content/uploads/2023/05/8-Female-Indian-Chefs-We-Adore.jpg" alt="Elisa Brinegaer">
+                <h3>Elisa Brinegaer</h3>
+                <p>Assistant Chef</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG RESTAURANT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #222;
+            color: white;
+        }
+        
+        .top-bar {
+            background: #232222;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            font-size: 14px;
+        }
+        .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        width: 350px;
+        text-align: left;
+        color: white;
+    }
+    .modal label {
+        display: block;
+        margin: 10px 0 5px;
+        font-size: 14px;
+    }
+    .modal input, .modal select, .modal button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+    .modal input {
+        background: #333;
+        color: white;
+    }
+    .modal button {
+        background: #e63946;
+        color: white;
+        font-weight: bold;
+    }
+    .btn {
+            background: #e63946;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: #e63946;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 50px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: #ea9c00;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        nav ul li a:hover {
+            color: #ea9c00;
+        }
+        
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .logo img {
+            height: 70px;
+            border-radius: 140%;
+        }
+        .hero {
+            background: url('https://family-images-y24bv7yxalct4.azureedge.net/families/7275/7275_background_1984x900.webp') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .container {
+            background: url('https://as2.ftcdn.net/v2/jpg/02/59/77/71/1000_F_259777118_87AFYXDLfrdDzMSwWUI7oEExUjnMFxyE.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 71px 0;
+        }
+        
+        .box {
+            width: 300px;
+            padding: 40px;
+            background: rgba(19, 16, 16, 0.396);
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(33, 33, 37, 0.336);
+            transition: transform 0.3s;
+        }
+        
+        .box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #ff6600, #ff3300);
+            border-radius: 8px;
+            color: rgb(245, 245, 245);
+            text-decoration: none;
+        }
+        /* FAQ Section Styling */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #f8f8f8;
+        }
+        .faq-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .faq-container {
+            max-width: 700px;
+            margin-right: 20px;
+            transform: translateX(-60px);
+            text-align: left;
+            background-color: rgba(26, 22, 22, 0.208); /* Transparent container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(18, 18, 18, 0.5);
+        }
+        .faq-item {
+            border-bottom: 1px solid #ff6347;
+            padding: 10px 0;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 21px;
+            color: #eeebe7;
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 60px;
+            text-align: left;
+            color: #f1f1f1;
+        }
+        .faq-image {
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        h1 {
+            margin-bottom: 80px;
+            color: #ece3e2;
+        }
+        .faq-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .faq-container {
+        max-width: 100%;
+    }
+  <body>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #363f39;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .testimonial-container {
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+            margin: auto; /* Center horizontally */
+            display: flex;
+            justify-content: center; /* Center content */
+            align-items: center; /* Center vertically */
+            flex-direction: column;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .testimonial-card {
+            min-width: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .stars {
+            color: #ffcc00;
+            font-size: 40px;
+        }
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .controls button {
+            background-color: rgba(255, 220, 220, 0.178);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    
+        
+    .footer {
+            background: radial-gradient(circle, #1a1a1a, #222);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+            border-top: 3px solid #4e4a4a;
+        }
+        
+        .footer .column {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+        }
+        
+        .footer h3 {
+            color: #ff6347;
+            text-transform: uppercase;
+        }
+        
+        .footer p, .footer a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        
+        .footer a:hover {
+            color: #ff6347;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div>Valpoi Sattari Goa, North Goa 403506</div>
+            <div>Daily: 8:00 am to 10:00 pm</div>
+            <div>VGBooking@restaurant.com</div>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="logo bite.jpg" alt="Tasty Bites">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Menus.html">Menus</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Our Chef.html">Our Chef</a></li>
+                <li><a href="Contact Us.html">Contact</a></li>
+            </ul>
+            <button class="btn" onclick="openModal()">Find a Table</button>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>For the love of delicious food</h2>
+            <p>Come with family & feel the joy of mouthwatering food</p>
+            <a href="Menus.html" class="button">Menus</a>
+        </div>
+    </section>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h2>Book a Table</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <label for="date">Date</label>
+            <input type="date" id="date">
+            <label for="time">Time</label>
+            <input type="time" id="time">
+            <label for="guests">Guests</label>
+            <select id="guests">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+            </select>
+            <button onclick="bookTable()">Reserve</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <div id="confirmationPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 20px; background: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; text-align: center; z-index: 1000;">
+        <h3>Table Reserved Successfully!</h3>
+        <p>Thank you for booking. Have a great day!</p>
+        <button class="btn" onclick="redirectHome()">OK</button>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("bookingModal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("bookingModal").style.display = "none";
+        }
+        function bookTable() {
+            closeModal();
+            document.getElementById("confirmationPopup").style.display = "block";
+            setTimeout(() => {
+                redirectHome();
+            }, 3000);
+        }
+        function redirectHome() {
+            document.getElementById("confirmationPopup").style.display = "none";
+            window.location.href = "Home.html";
+        }
+    </script>
+    
+    
+    <section class="container">
+        <div class="box">
+            <h2>Dine In</h2>
+            <p>Reserve a table online so we know to expect you.</p>
+            <a href="" class="button">Find a Table</a>
+        </div>
+        <div class="box">
+            <h2>Take Out</h2>
+            <p>Choose from our selection, and we’ll pack it up for you.</p>
+            <a href="Menus.html" class="button">Visit Our Menu</a>
+        </div>
+        <div class="box">
+            <h2>Pick Up</h2>
+            <p>Call or message ahead, and we’ll have your order ready.</p>
+            <a href="Contact Us.html" class="button">Contact Us</a>
+        </div>
+    </section>
+</section> <!-- Closing section for .container -->
+
+</head>
+<body>
+    <div class="faq-section">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-content">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What are your restaurant's hours of operation? <span>+</span></div>
+                    <div class="faq-answer">We are open from 9 AM to 11 PM daily.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Where is your restaurant located? <span>+</span></div>
+                    <div class="faq-answer">We are located at Goa,Valpoi.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you take reservations? <span>+</span></div>
+                    <div class="faq-answer">Yes, you can reserve a table online or call us.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Maximum seating capacity ?? <span>+</span></div>
+                    <div class="faq-answer">we have large restaurant with seating capacity of 70</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">DO you accept credit card? <span>+</span></div>
+                    <div class="faq-answer">Yes, we accept credit card as UPI payments.</div>
+                </div>
+            </div>
+            <img src="https://cdn.pixabay.com/photo/2018/04/17/23/04/food-3329079_960_720.png" alt="Burger and Wine" class="faq-image">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                item.querySelector('span').textContent = answer.style.display === 'block' ? '-' : '+';
+            });
+        });
+    </script>
+
+
+
+    <div class="testimonial-container">
+        <div class="testimonial-slider" id="slider">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Absolutely amazing experience! The food was fantastic!"</p>
+                <div class="profile">
+                    <img src="https://images.rawpixel.com/image_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2pvYjEwMzktZWxlbWVudC0yNi0zOTNfMS5qcGc.jpg" alt="User">
+                    <span>- John Doe</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The ambiance and service were top-notch. Highly recommended!"</p>
+                <div class="profile">
+                    <img src="https://www.kindpng.com/picc/m/41-415494_profile-picture-in-circle-hd-png-download.png" alt="User">
+                    <span>- Sarah Lee</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"A perfect blend of flavors in every dish. Will visit again!"</p>
+                <div class="profile">
+                    <img src="https://www.kindpng.com/picc/m/557-5575215_2020-profile-circle-hd-png-download.png" alt="User">
+                    <span>- Alex Smith</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Exceptional attention to detail. The truffle mac & cheese is a must-try!"</p>
+                <div class="profile">
+                    <img src="https://www.nicepng.com/png/detail/182-1829287_cammy-lin-ux-designer-circle-picture-profile-girl.png" alt="User">
+                    <span>- Michael Gordon</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Truly a hidden gem! Every bite was a delight."</p>
+                <div class="profile">
+                    <img src="https://www.pngitem.com/pimgs/m/404-4042710_circle-profile-picture-png-transparent-png.png" alt="User">
+                    <span>- Emma Wilson</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+    <script>
+    let currentIndex = 0;
+const slides = document.querySelectorAll(".testimonial-card");
+const slider = document.getElementById("slider");
+
+function updateSlide() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`; // Fix: Added backticks for template literals
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide();
+}
+
+setInterval(nextSlide, 3000); // Auto swipe every 3 seconds
+</script>
+
+    
+    
+
+<footer class="footer">
+    <div class="column">
+        <h3>VG RESTAURANT</h3>
+        <p>"Welcome to Tasty Bites, where flavor meets passion.
+           <p>Our chefs craft menus that blend tradition with innovation.</p> 
+           <p>We're dedicated to using fresh, locally sourced ingredients.</p> 
+            <p>Where every bite tells a story, and every meal is a memory."</p>
+    </div>
+    <div class="column">
+        <h3>Quick Links</h3>
+        <a href="Home.html">Home</a>
+        <a href="Menus.html">Menu</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="Contact Us.html">Contact</a>
+    </div>
+    <div class="column">
+        <h3>Get in Touch</h3>
+        <p>📍 Valpoi Sattari Goa, North Goa</p>
+        <p>📞 123-456-7890</p>
+        <p>✉ VGBooking@restaurant.com</p>
+    </div>
+</footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

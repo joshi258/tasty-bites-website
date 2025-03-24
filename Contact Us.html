@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gourmet Delight</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('restaurant-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #d35400;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            color: #444;
+            font-size: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #fdf6f0;
+            transition: border 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            border: 1px solid #d35400;
+            outline: none;
+        }
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #d35400;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #a84300;
+        }
+        #confirmationMessage {
+            display: none;
+            margin-top: 15px;
+            color: #2d862d;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: #eaf7e4;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #444;
+        }
+        .contact-info a {
+            color: #d35400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have a question or a special request? Our team is happy to help!</p>
+        <form id="contactForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <span class="error" id="nameError">Name is required.</span>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <span class="error" id="emailError">Valid email is required.</span>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            <span class="error" id="messageError">Message cannot be empty.</span>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="confirmationMessage">Thank you for reaching out! We'll get back to you soon.</div>
+        <div class="contact-info">
+            <p>📍 Visit us at: Valpoi Sattari Goa, North Goa 403506</p>
+            <p>📞 Call us: <a href="tel:+123456789">+1 234 567 89</a></p>
+            <p>📧 Email: <a href="VGBooking@restaurant.com">contact@gourmetdelight.com</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let isValid = true;
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            document.getElementById('nameError').style.display = name ? 'none' : 'block';
+            document.getElementById('emailError').style.display = email.match(/^\S+@\S+\.\S+$/) ? 'none' : 'block';
+            document.getElementById('messageError').style.display = message ? 'none' : 'block';
+            
+            if (!name || !email.match(/^\S+@\S+\.\S+$/) || !message) {
+                isValid = false;
+            }
+            
+            if (isValid) {
+                document.getElementById('confirmationMessage').style.display = 'block';
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
