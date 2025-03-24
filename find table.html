@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Booking Form Container */
+        .booking-container {
+            background: black;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Form Fields */
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+        }
+
+        /* Buttons */
+        .reserve-btn, .cancel-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .reserve-btn {
+            background: #e63946;
+        }
+
+        .cancel-btn {
+            background: #555;
+        }
+
+        .reserve-btn:hover {
+            background: #ff3b4a;
+        }
+
+        .cancel-btn:hover {
+            background: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="booking-container">
+        <h2>Book a Table</h2>
+        <form id="bookingForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" required>
+
+            <label for="guests">Guests</label>
+            <select id="guests" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+            </select>
+
+            <button type="submit" class="reserve-btn">Reserve</button>
+            <button type="button" class="cancel-btn" onclick="resetForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents page refresh
+            alert("Your table has been reserved successfully!");
+        });
+
+        function resetForm() {
+            document.getElementById("bookingForm").reset();
+        }
+    </script>
+
+</body>
+</html>
